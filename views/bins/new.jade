@@ -1,0 +1,48 @@
+
+extends ../layout
+
+append body
+  if user
+    div.container
+      h1 New Bin
+      form(action='/ventures/#{venture.id}/bins'  method='post')
+        div.errors
+          if errors
+            for error in errors
+              p.red= error
+        div
+          label(for="title") Title
+          input.form-control(type="text" id="title" name='title' placeholder="Title" value= info ? info.title : '')
+        div
+          label(for="img") Image
+          input.form-control(type="text" id="image" name='image' placeholder="Paste in a public URL for your image" value= info ? info.image : '')
+        div
+          label(for="description") Description
+          input.form-control(type="text" id="description" name='description' placeholder="what's in your rig" value= info ? info.description : '')
+        div
+          label(for="advice") Advice
+          input.form-control(type="text" id="advice" name='advice' placeholder="a tip or two for noobs" value= info ? info.advice : '')
+        div
+          label(for="venture_id")
+          input.form-control(type="hidden" id="venture_id" name='venture_id' value='#{venture.id}')
+          input.form-control(type="hidden" id="user_id" name='user_id' value='#{user}')
+        div
+            label Experience
+            p
+              input(type="radio" name="experience" value="1" checked)
+              one 1-3 years 
+        div
+          input(type="radio" name="experience" value="2")
+          two 4-5 years
+        div
+          input(type="radio" name="experience" value="3")
+          three 5-10 years
+        div
+          input(type="radio" name="experience" value="4")
+          four since the beginning of time
+        //- div.form-group
+        //-   label(for="description") Description
+        //-   textarea.form-control(rows="5" id='description' name='description' placeholder="Keep it brief")
+        button.btn.btn-primary(type="submit") Submit
+  else
+    h1 please log in to submit a new bin 

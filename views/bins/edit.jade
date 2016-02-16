@@ -1,0 +1,40 @@
+
+extends ../layout
+
+append body
+  .container
+    div
+      h1 edit user card
+      form(action='/ventures/#{bin.venture_id}/bins/#{bin.id}'  method='post')
+        div
+          label(for="title") Title
+          input.form-control(type="text" id="title" name='title' value=bin.title)
+        div
+          label(for="image") Image
+          input.form-control(type="text" id="image" name='image' value=bin.image)
+
+        div
+          label(for="description") Description
+          input.form-control(type="text" id="description" name='description' value=bin.description)
+        div
+          label(for="advice") Advice
+          input.form-control(type="text" id="advice" name='advice' value=bin.advice)
+        div
+          label(for="venture_id")
+          input.form-control(type="hidden" id="venture_id" name='venture_id' value='#{bin.venture_id}')
+        div
+            label Experience
+            p
+              input(type="radio" name="experience" value="1" checked=(bin.experience == 1)) 
+              one 1-3 years 
+        div
+          input(type="radio" name="experience" value="2" checked=(bin.experience == 2))
+          two 4-5 years
+        div
+          input(type="radio" name="experience" value="3" checked=(bin.experience == 3))
+          three 5-10 years
+        div
+          input(type="radio" name="experience" value="4" checked=(bin.experience == 4))
+          four since the beginning of time
+        br
+        button.btn.btn-primary(type="submit") submit 

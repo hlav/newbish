@@ -1,0 +1,15 @@
+extends ../layout
+
+append body
+  h1 this is a test
+  h1 this is a test
+  p
+  h1
+    a(href='/ventures/#{venture.id}/bins/#{bin.id}/comments/new') Add a comment  
+  .container
+  h1 WELCOME TO COMMENTS INDEX PAGE
+  h1 what type of venture:  #{venture.venture}
+  h1 what type of bin: #{bin.title}
+  if joins
+    for join in joins
+      h1 #{join.username} commented: #{join.comment}

@@ -1,0 +1,302 @@
+@font-face{
+  font-family: 'Bariol';
+  src: url('bariol_regular-webfont.ttf');
+}
+
+a:hover{
+  text-decoration: none;
+}
+
+.navbar-fixed-top{
+  background-color: #ff8235;
+  color: white;
+  border: none;
+  box-shadow: 3px 3px 5px rgba(0,0,0,.2);
+  font-size: 1.3em;
+}
+*:focus {
+    outline: none;
+   }
+
+
+
+#navbar ul{
+  float: right;
+}
+
+#navbar a{
+  color:white;
+}
+a:hover{
+  text-decoration: none;
+}
+.option{
+  margin: 15px;
+}
+.cardDisplay{
+  display: inline-block;
+  /*flex-direction: row;*/
+}
+
+.card{
+  display: inline-block;
+  width: 250px;
+  height: 265px;
+  background-color: #479DB0;
+  border-radius: 10px;
+  transition: 0.5s ease;
+  opacity: .8;
+  margin: 15px;
+  overflow: hidden;
+  position: relative;
+
+}
+
+.card:hover{
+  box-shadow: 0px 10px 61px 9px rgba(0,0,0,0.46);
+}
+.cards{
+  font-size: 20px;
+  /*top: px;*/
+  text-align: center;
+  color: #E0E2F5;
+  padding: 10px;
+}
+
+.card:hover{
+  -webkit-box-shadow: 2px 10px 32px 9px rgba(46,64,118,0.25);
+  -moz-box-shadow: 2px 10px 32px 9px rgba(46,64,118,0.25);
+  box-shadow: 2px 10px 32px 9px rgba(46,64,118,0.25);
+}
+.venturestitle{
+  font-size: 28px;
+}
+
+.binPreview{
+  height:140px;
+  width:auto;
+  border-radius: 10px;
+  display:block;
+  margin:auto;
+  margin-top: 20px;
+}
+
+.heart{
+  height: 20px;
+  width: auto;
+  position: absolute;
+  left: 0;
+  bottom: 7px;
+}
+.upvote{
+  color: red;
+  height: auto;
+}
+body{
+  background-color: #e0e0f5;
+  color: #3b457e;
+  font-family: Bariol;
+}
+
+.footer{
+  background-color: #2f3a77;
+  height: 5vh;
+}
+
+.mainHome{
+  text-align: center;
+}
+
+.input-group-btn{
+  /*width: 10%;*/
+}
+
+.input-group{
+  width: 50vw;
+  margin: 0 auto;
+}
+
+.input-group input{
+  font-size: 2.2em;
+  height: 60px;
+}
+
+.purps{
+  background-color: #303a77;
+  color: #e0e0f5;
+  height: 60px;
+  width: 70px;
+}
+
+.purp{
+  background-color: #303a77;
+}
+
+.tits{
+  margin-top: 10vh;
+}
+
+.navbar-header .navbar-brand{
+  color: white;
+  font-size: 2em;
+}
+
+.halfer{
+  width: 45%;
+  display: inline-block;
+  /*padding-left: 25px;*/
+}
+
+.plus{
+  margin: 0 auto;
+  text-align: center;
+  margin-top: 10px;
+}
+
+.kit{
+  float: right;
+  clear: both;
+  margin-top: -75px;
+}
+
+.butcont{
+  margin: 0 auto;
+}
+
+.left{
+  margin-right: 10px;
+  margin-left: -10px;
+}
+
+.right{
+  margin-left: 10px;
+}
+
+.asin{
+  width: 93%;
+  margin: 0 auto;
+}
+
+#kitter{
+  text-align: center;
+}
+
+.homeGrid{
+  margin: 5px;
+  transition:  0.5s ease;
+}
+
+.homeGrid:hover{
+  box-shadow: 0px 10px 61px 9px rgba(0,0,0,0.46);
+}
+/*
+.homeCont{
+  margin-top: 50px;
+}*/
+
+.username{
+  position: absolute;
+  right: 8px;
+  bottom: 0;
+  color: #ff8235;
+  text-shadow: none;
+}
+
+.upvoteDiv{
+  position: absolute;
+  bottom: 0;
+  left: 10px;
+  text-align: center;
+}
+
+.upspan{
+  position: absolute;
+  bottom: 7px;
+  left: 25px;
+  color: white;
+}
+
+.kitItem{
+  clear: both;
+  background-color: white;
+  height: 100px;
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.kitImg{
+  float: left;
+  height: 100%;
+  margin-right: 10px;
+}
+
+.scrollDiv{
+  margin: 0 auto;
+  width: 42vw;
+  margin-top: 100px;
+  height: 40vh;
+  overflow-y: scroll;
+  float: right;
+  border: 1px solid rgba(0,0,0,.18);
+  padding: 10px;
+  background: white;
+}
+
+.binTits{
+  float: left;
+  width: 30vw;
+}
+
+.binUserImg{
+  height: 300px;
+}
+
+.binBottom{
+  margin-top: 30px;
+  clear: both;
+  float: right;
+  width: 42vw;
+  text-align: center;
+  font-size: 20px;
+}
+
+.back{
+  margin-top: 10px;
+  color: #CF434E;
+}
+
+.binTitle{
+  text-align: center;
+}
+
+.add{
+  border: 5px solid #4466d2;
+  background: none;
+  text-align: center;
+}
+
+.add span{
+  font-size: 100px;
+  color: #4466d2;
+  text-align: center;
+margin-top: 30%;
+}
+
+hr{
+  border-color: #3E90A5;
+}
+
+.error{
+  color: #CF434E;
+  margin: 0 auto;
+}
+
+.btn{
+  display: inline;
+}
+
+.heartCont{
+  /*position: relative;*/position: absolute;
+  top: 150px;
+  left: 500px;
+}

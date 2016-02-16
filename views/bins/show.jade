@@ -1,0 +1,46 @@
+
+extends ../layout
+
+append body
+	.container
+		div.heartCont
+				span.upvote.upspan #{bin.upvote}
+				form(action='/upvotes' method='post')
+					input(type="text" value=bin.id name='id' hidden='true')
+					input(type="text" value=bin.venture_id name='ven' hidden='true')
+					input.heart(type='image' src='https://s3-us-west-2.amazonaws.com/testphotosnoobish/liked.png')
+		if bin
+			div.binTits
+				div
+					a(href='/ventures/#{bin.venture_id}')
+						span.back(class="glyphicon glyphicon-chevron-left" aria-hidden="true") 
+						span.back back to bins
+				h1.binTitle #{bin.title}
+				img.binUserImg(src='#{bin.image}')
+				p User: #{bin.user_id}
+		div
+			.scrollDiv
+				each item, index in kit 
+					a(href='#{kit[index].url}')
+						div.kitItem
+							img.kitImg(src='#{kit[index].image}') 
+							.kitText
+								p #{kit[index].item} 
+								p #{kit[index].price}
+							br
+			if (bin.user_id == user)
+				.kit
+					a(href='#{bin.id}/kits/new')
+						button.btn.btn-primary add an item
+					a(href='#{bin.id}/edit')
+						button.btn.btn-primary edit link
+					p
+					form(action='/ventures/#{bin.venture_id}/bins/#{bin.id}/delete' method='post')
+						input.btn.btn-primary(type='submit' value='Delete')
+			div.binBottom
+				p "#{bin.description}"
+				hr
+				p "#{bin.advice}"
+			
+				
+			

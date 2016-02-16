@@ -1,0 +1,11 @@
+extends ../layout
+append body  
+  .container
+    p *If you already have an account, you will be signed in*
+    form(action="/users/uName" method="POST")
+      div.form-group
+        input(value=user name='userId' readonly type='hidden')
+        br
+        label(for='uName') Enter a Username:
+        input.form-control(type='text' name='uName')
+        button.btn.btn-primary(type="submit") Create Account

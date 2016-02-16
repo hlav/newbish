@@ -1,0 +1,50 @@
+extends ../layout
+
+append body
+  .container
+    a(href='/ventures/#{ven}/bins/#{bin}')
+      button.btn.btn-primary All Done!
+    h2  #{result.title}
+    h3 #{error}
+    div#kitter
+      h2 add an item to your kit
+      h3 either 
+      form(action='/ventures/#{ven}/bins/#{result.bin_id}/kits' method='post')
+        div(class='input-group')
+          input.form-control(type='text' name = 'asin' placeholder='enter an amazon ASIN #')
+          span(class='input-group-btn')
+            button.purps(class='btn btn-default' type='submit') Go!
+          input(value=bin name='bin' hidden)
+      a.btn.btn-lg.btn-success(href='#', data-toggle='modal', data-target='#basicModal' style="margin-top: 10px;") Find My ASIN#
+      #basicModal.modal.fade(tabindex='-1', role='dialog', aria-labelledby='basicModal', aria-hidden='true')
+        .modal-dialog
+          .modal-content
+            .modal-header
+              button.close(type='button', data-dismiss='modal', aria-hidden='true') &times;
+              h4#myModalLabel.modal-title Modal title
+            .modal-body
+              h3 Every product on Amazon has an ASIN. This number will help noobish connect to your exact product on Amazon. Follow the steps below to find your item's ASIN:
+              ol
+                li locate your exact itme on amazon
+                li Look at the URL and copy the number out of the url. In the URL below, it is the number (B015G022TK), in between /dp/ and /ref=...
+                li http://www.amazon.com/K2-All-Ski-Roller-Lite/dp/B015G022TK/ref=sr_1_4?s=sporting-goods&ie=UTF8&qid=1454690204&sr=1-4&keywords=k2+ski+bag
+
+            .modal-footer
+              button.btn.btn-default(type='button', data-dismiss='modal') Close
+
+      h3 or 
+      h4 enter the brand and name of the item and our algorithm will find the best match
+      form(action='/ventures/#{ven}/bins/#{result.bin_id}/kits' method='post')
+        input(value=bin name='bin' hidden)
+        .halfer.input-group
+          h4 brand
+          input.form-control.left(type='text' name = 'brand1')
+        .halfer.input-group
+          h4 name
+          input.form-control.right(name = 'name1')
+        br
+        br
+        button.btn.btn-primary.purp(type="submit") Search
+        br
+
+          

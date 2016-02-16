@@ -1,0 +1,18 @@
+extends ../layout
+
+append body 
+  .container 
+    div.form-box-container
+      .alternative_action
+        h1 SIGN IN
+        h3.error incorrect credentials    
+    form(action="/users/login" method="POST")
+      include form.jade
+
+
+    div.form-box-container
+      div.alternative_action
+        a(href="/auth/signup")  Don't have an account? Sign up
+    p or
+    a(href='/auth/facebook')
+      button.btn.btn-primary(type="submit" href='/auth/facebook' class="btn btn-social btn-twitter") Log in with Facebook

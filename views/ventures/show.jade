@@ -1,0 +1,23 @@
+
+extends ../layout
+
+append body
+	.container
+		h2 venture title
+		.cardDisplay
+			for bin, index in bins
+				div.card
+					a(href='/ventures/#{ventu_id}/bins/#{bins2[index].id}')
+						h2.cards #{bin.title}
+						img(class='binPreview' src="#{bin.image}")
+						div.upvoteDiv
+							span.upvote.upspan #{bin.upvote}
+							form(action='/upvotes' method='post')
+								input(type="text" value=bins2[index].id name='id' hidden='true')
+								input(type="text" value=bins2[index].venture_id name='ven' hidden='true')
+								input.heart(type='image' src='https://s3-us-west-2.amazonaws.com/testphotosnoobish/liked.png')
+						h4.upvote.username posted by #{bin.username}
+			a(href='/ventures/#{ventu_id}/bins/new')
+				div.card.add
+					span(class="glyphicon glyphicon-plus-sign" aria-hidden="true")
+					h2 add new bin

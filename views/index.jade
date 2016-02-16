@@ -1,0 +1,12 @@
+extends layout
+
+
+append body
+	.container.mainHome
+		h1.tits everybody's gotta start somewhere
+		h2 choose a venture below
+		div.homeCont
+			each venture in ventures
+				a(href='/ventures/#{venture.id}')
+					img.homeGrid(src=venture.image)
+	div.footer.navbar-fixed-bottom

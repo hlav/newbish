@@ -1,0 +1,33 @@
+extends ../layout
+
+append body
+  .container
+    a(href='/ventures/#{ven}/bins/#{bin}')
+      button.btn.btn-primary All Done!
+    h2  #{result.title}
+    h3.error no results found, try again
+    div#kitter
+      h2 add an item to your kit
+      h3 either 
+      form(action='/ventures/#{ven}/bins/#{result.bin_id}/kits' method='post')
+        div(class='input-group')
+          input.form-control(type='text' name = 'asin' placeholder='enter an amazon ASIN #')
+          span(class='input-group-btn')
+            button.purps(class='btn btn-default' type='submit') Go!
+          input(value=bin name='bin' hidden)
+      h3 or 
+      h4 enter the brand and name of the item and our algorithm will find the best match
+      form(action='/ventures/#{ven}/bins/#{result.bin_id}/kits' method='post')
+        input(value=bin name='bin' hidden)
+        .halfer.input-group
+          h4 brand
+          input.form-control.left(type='text' name = 'brand1' value=' ')
+        .halfer.input-group
+          h4 name
+          input.form-control.right(name = 'name1')
+        br
+        br
+        button.btn.btn-primary.purp(type="submit") Search
+        br
+
+          

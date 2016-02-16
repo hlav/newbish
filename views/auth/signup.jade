@@ -1,0 +1,25 @@
+extends ../layout
+
+append body
+  .container
+    div.form-box-container
+      div.alternative_action
+        h1 SIGN UP
+        a(href='/auth/facebook')
+          button.btn.btn-primary(type="submit") Sign up with Facebook
+      br
+      p or
+      br
+    form(action="/users" method="POST")
+      div.form-group
+        label(for="email") Email
+        input.form-control(type="text" id="email" name="email" placeholder="bob@noobish.com")
+
+      include form
+
+
+    div.form-box-container
+      div.alternative_action
+
+        a(href="/auth/signin")  Already have an account? Sign in
+    
